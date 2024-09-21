@@ -6,9 +6,7 @@ RUN apt -y install kali-linux-headless \
     kali-tools-information-gathering \
     kali-tools-vulnerability \
     kali-tools-web \
-    kali-tools-database \
     kali-tools-passwords \
-    kali-tools-wireless \
     kali-tools-reverse-engineering \
     kali-tools-exploitation \
     kali-tools-social-engineering \
