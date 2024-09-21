@@ -1,4 +1,6 @@
 FROM --platform=i386 kalilinux/kali-last-release:i386
+# Applies to kali too
+ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get clean && apt-get update && apt-get -y upgrade
 RUN apt -y install kali-linux-headless \
     kali-tools-information-gathering \
