@@ -160,6 +160,7 @@ jobs:
       # Another compelling reason to use 'docker cp' is that it preserves resolv.conf.
       - name: Export and unpack container filesystem contents into mounted ext2 image.
         run: | 
+          df -h
           sudo docker cp -a ${CONTAINER_ID}:/ /mnt/
           sudo umount /mnt/
       # Result is an ext2 image for webvm.
