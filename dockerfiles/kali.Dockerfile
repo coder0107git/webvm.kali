@@ -3,12 +3,13 @@ FROM --platform=i386 kalilinux/kali-last-release:i386
 ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get clean && apt-get update && apt-get -y upgrade
 RUN apt -y install nano sudo \
-    apt-utils gcc python3 vim \
+    apt-utils vim python3 wget \
     unzip nodejs fakeroot dbus \
-    base whiptail hexedit \
+    base whiptail hexedit procps \
 	patch wamerican ucf manpages \
 	file luajit make dialog curl \
-	less cowsay netcat-openbsd
+	less cowsay netcat-openbsd && \
+    rm -rf /var/lib/apt/lists/*
 RUN useradd -m user && echo "user:password" | chpasswd && \
     usermod -aG sudo user
 # We set WORKDIR, as this gets extracted by Webvm to be used as the cwd. This is optional.
