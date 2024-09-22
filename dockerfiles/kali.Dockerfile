@@ -3,16 +3,8 @@ FROM --platform=i386 kalilinux/kali-last-release:i386
 ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get clean && apt-get update && apt-get -y upgrade
 RUN apt -y install kali-linux-core \
-    kali-tools-information-gathering \
-    kali-tools-vulnerability \
-    kali-tools-passwords \
     kali-tools-reverse-engineering \
-    kali-tools-exploitation \
     kali-tools-social-engineering \
-    kali-tools-sniffing-spoofing \
-    kali-tools-post-exploitation \
-    kali-tools-forensics \
-    kali-tools-reporting \
     nano
 RUN useradd -m user && echo "user:password" | chpasswd
 # We set WORKDIR, as this gets extracted by Webvm to be used as the cwd. This is optional.
