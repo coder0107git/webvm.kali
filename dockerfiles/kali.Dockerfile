@@ -8,7 +8,7 @@ RUN apt -y install nano sudo \
     base whiptail hexedit \
 	patch wamerican ucf manpages \
 	file luajit make dialog curl \
-	less cowsay netcat-openbsd \ 
+	less cowsay netcat-openbsd
 RUN useradd -m user && echo "user:password" | chpasswd && \
     usermod -aG sudo user
 # We set WORKDIR, as this gets extracted by Webvm to be used as the cwd. This is optional.
