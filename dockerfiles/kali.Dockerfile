@@ -3,7 +3,12 @@ FROM --platform=i386 kalilinux/kali-last-release:i386
 ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get clean && apt-get update && apt-get -y upgrade
 RUN apt -y install nano \
-    kali-tools-social-engineering
+    apt-utils gcc python3 vim \
+    unzip nodejs fakeroot dbus \
+    base whiptail hexedit \
+	patch wamerican ucf manpages \
+	file luajit make dialog curl \
+	less cowsay netcat-openbsd
 RUN useradd -m user && echo "user:password" | chpasswd
 # We set WORKDIR, as this gets extracted by Webvm to be used as the cwd. This is optional.
 WORKDIR /home/user/
