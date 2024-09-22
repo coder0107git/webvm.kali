@@ -3,7 +3,6 @@ FROM --platform=i386 kalilinux/kali-last-release:i386
 ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get clean && apt-get update && apt-get -y upgrade
 RUN apt -y install kali-linux-core \
-    kali-tools-reverse-engineering \
     kali-tools-social-engineering \
     nano
 RUN useradd -m user && echo "user:password" | chpasswd
